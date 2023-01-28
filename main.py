@@ -17,7 +17,7 @@ def press(key):
     if key == "w":
         bw.forward()
         bw.speed = forward_speed
-        print(str(bw.speed))
+        print(forward_speed)
     elif key == "s":
         bw.backward()
         bw.speed = back_speed
