@@ -15,13 +15,13 @@ def press(key):
     global forward_speed
 
     if key == "w":
-        print(bw.speed(0))
         bw.forward()
         bw.speed = forward_speed
+        print(bw.speed)
     elif key == "s":
-        print(bw.speed(0))
         bw.backward()
         bw.speed = back_speed
+        print(bw.speed)
     elif key == "d":
         fw.turn(90 + step_turn)
     elif key == "a":
