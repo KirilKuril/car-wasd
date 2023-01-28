@@ -15,9 +15,11 @@ def press(key):
     global forward_speed
 
     if key == "w":
+        print(bw.speed)
         bw.forward()
         bw.speed = forward_speed
     elif key == "s":
+        print(bw.speed)
         bw.backward()
         bw.speed = back_speed
     elif key == "d":
@@ -32,7 +34,7 @@ def press(key):
         bw.speed = forward_speed + speed_step
     elif key == "down":
         bw.forward()
-        bw.speed = forward_speed + speed_step
+        bw.speed = forward_speed - speed_step
     elif key == "left":
         step_turn = step_turn - 30
     elif key == "right":
@@ -41,8 +43,6 @@ def press(key):
 def release(key):
     if key == "a" or key == "d":
         fw.turn_straight()
-    elif key == "w" or key == "s":
-        bw.stop()
 
 
 listen_keyboard(
