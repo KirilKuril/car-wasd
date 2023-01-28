@@ -28,16 +28,18 @@ def press(key):
         bw.stop()
         fw.turn(90)
     elif key == "Up":
-        forward_speed += speed_step
+        bw.forward()
+        bw.speed = forward_speed + speed_step
     elif key == "Down":
-        forward_speed -= speed_step
+        bw.forward()
+        bw.speed = forward_speed + speed_step
     elif key == "Left":
         step_turn = step_turn - 30
     elif key == "Right":
         step_turn = step_turn + 30
 
 def release(key):
-    if key == "a" or key ==" d":
+    if key == "a" or key =="d":
         fw.turn_straight()
 
 
