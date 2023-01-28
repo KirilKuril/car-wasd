@@ -35,9 +35,9 @@ def press(key):
         step_turn = step_turn + 30
 
 listen_keyboard(
-    on_press=press,
-    on_release=release,
-)
+    on_press=press
+    )
+
 
 def stop():
 	bw.stop()
