@@ -27,21 +27,22 @@ def press(key):
     elif key == "r":
         bw.stop()
         fw.turn(90)
-    elif key == "Up":
+    elif key == "up":
         bw.forward()
         bw.speed = forward_speed + speed_step
-    elif key == "Down":
+    elif key == "down":
         bw.forward()
         bw.speed = forward_speed + speed_step
-    elif key == "Left":
+    elif key == "left":
         step_turn = step_turn - 30
-    elif key == "Right":
+    elif key == "right":
         step_turn = step_turn + 30
 
 def release(key):
-    if key == "a" or key =="d":
+    if key == "a" or key == "d":
         fw.turn_straight()
-
+    elif key == "w" or key == "s":
+        bw.stop()
 
 
 listen_keyboard(
