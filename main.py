@@ -9,13 +9,13 @@ speed_step = 20
 back_speed = 40
 step_turn = 60
 forward_speed = 60
-speed = 0
+direction = 0
 
 
 def press(key):
     global step_turn
     global forward_speed
-    global speed
+    global direction
 
     if key == "up":
         bw.forward()
@@ -28,19 +28,21 @@ def press(key):
     elif key == "right":
         step_turn = step_turn + 30
     elif key == "w":
-        if speed == 0:
+        if direction == 0:
             bw.forward()
-            speed = forward_speed
-        elif speed < 0:
-            speed = 0
-        bw.speed = speed
+            direction = 1
+            bw.speed = forward_speed
+        elif direction < 0:
+            direction = 0
+            bw.speed = 0
     elif key == "s":
-        if speed == 0:
+        if direction == 0:
             bw.backward()
-            speed = back_speed
-        elif speed > 0:
-            speed = 0
-        bw.speed = speed
+            direction = -1
+            bw.speed = back_speed
+        elif direction > 0:
+            direction = 0
+            bw.speed = 0
     elif key == "d":
         fw.turn(90 + step_turn)
     elif key == "a":
@@ -62,7 +64,7 @@ listen_keyboard(
 
 
 def stop():
-	bw.stop()
-	fw.turn_straight()
+    bw.stop()
+    fw.turn_straight()
 
 
