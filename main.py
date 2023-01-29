@@ -5,7 +5,6 @@ from picar import back_wheels
 fw = front_wheels.Front_Wheels(db='config')
 bw = back_wheels.Back_Wheels(db='config')
 
-step_speed = 0
 back_speed = 40
 step_turn = 60
 forward_speed = 60
@@ -14,19 +13,16 @@ direction = 0
 
 def press(key):
     global step_turn
-    global step_speed
+    global forward_speed
     global direction
 
     if key == "up":
-        if step_speed < 40:
-            step_speed = step_speed + 20
-        elif step_speed == 40:
-            step_speed = 40
+        if direction == 1 and forward_speed < 100:
+            forward_speed += 10
+            bw.forward()
+            bw.speed = forward_speed
     elif key == "down":
-        if step_speed == 0:
-            step_speed = 0
-        elif step_speed > 0:
-            step_speed -= 20
+        print('hello')
     elif key == "left":
         step_turn = step_turn - 30
     elif key == "right":
@@ -35,7 +31,7 @@ def press(key):
         if direction == 0:
             bw.forward()
             direction = 1
-            bw.speed = forward_speed + step_speed
+            bw.speed = forward_speed
         elif direction < 0:
             direction = 0
             bw.speed = 0
