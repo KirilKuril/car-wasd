@@ -18,14 +18,12 @@ def press(key):
     global direction
 
     if key == "up":
-        bw.forward()
         forward_speed += speed_step
     elif key == "down":
-        bw.forward()
         forward_speed -= speed_step
     elif key == "left":
         step_turn = step_turn - 30
-    elif key == "right":
+    elif key == D"right":
         step_turn = step_turn + 30
     elif key == "w":
         if direction == 0:
