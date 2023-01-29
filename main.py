@@ -17,26 +17,16 @@ def press(key):
     if key == "up":
         bw.forward()
         bw.speed = forward_speed + speed_step
-        x = bw.speed
-        print(x)
     elif key == "down":
         bw.forward()
         bw.speed = forward_speed - speed_step
-        x = bw.speed
-        print(x)
     elif key == "left":
         step_turn = step_turn - 30
-        y = step_turn
-        print(y)
     elif key == "right":
         step_turn = step_turn + 30
-        y = step_turn
-        print(y)
     elif key == "w":
         bw.forward()
         bw.speed = forward_speed
-        x = bw.speed
-        print(x)
     elif key == "s":
         if bw.speed == 0:
             bw.backward()
