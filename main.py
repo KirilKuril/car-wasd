@@ -5,7 +5,7 @@ from picar import back_wheels
 fw = front_wheels.Front_Wheels(db='config')
 bw = back_wheels.Back_Wheels(db='config')
 
-speed_step = 0
+step_speed = 0
 back_speed = 40
 step_turn = 60
 forward_speed = 60
