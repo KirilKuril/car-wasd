@@ -21,8 +21,16 @@ def press(key):
             forward_speed += 10
             bw.forward()
             bw.speed = forward_speed
+        elif direction == 1 and forward_speed == 90:
+            forward_speed = 100
+            bw.forward()
+            bw.speed = forward_speed
     elif key == "down":
-        print('hello')
+        if direction == 1 and direction == 0 and forward_speed <= 100:
+            forward_speed -= 10
+            bw.forward()
+            bw.speed = forward_speed
+
     elif key == "left":
         step_turn = step_turn - 30
     elif key == "right":
