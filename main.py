@@ -18,7 +18,7 @@ def press(key):
     global direction
 
     if key == "up":
-        step_speed += 20
+        step_speed = step_speed + 20
     elif key == "down":
         if step_speed == 0:
             step_speed = 0
