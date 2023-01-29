@@ -14,14 +14,38 @@ def press(key):
     global step_turn
     global forward_speed
 
-    if key == "w":
+    if key == "up":
+        bw.forward()
+        bw.speed = forward_speed + speed_step
+        x = bw.speed
+        print(x)
+    elif key == "down":
+        bw.forward()
+        bw.speed = forward_speed - speed_step
+        x = bw.speed
+        print(x)
+    elif key == "left":
+        step_turn = step_turn - 30
+        y = step_turn
+        print(y)
+    elif key == "right":
+        step_turn = step_turn + 30
+        y = step_turn
+        print(y)
+    elif key == "w":
         bw.forward()
         bw.speed = forward_speed
-        print(forward_speed)
+        x = bw.speed
+        print(x)
     elif key == "s":
-        bw.backward()
-        bw.speed = back_speed
-        print(bw.speed)
+        if bw.speed == 0:
+            bw.backward()
+            bw.speed = back_speed
+        elif bw.speed >= 0:
+            bw.stop()
+        else:
+            bw.backward()
+            bw.speed = back_speed
     elif key == "d":
         fw.turn(90 + step_turn)
     elif key == "a":
@@ -29,16 +53,7 @@ def press(key):
     elif key == "r":
         bw.stop()
         fw.turn(90)
-    elif key == "up":
-        bw.forward()
-        bw.speed = forward_speed + speed_step
-    elif key == "down":
-        bw.forward()
-        bw.speed = forward_speed - speed_step
-    elif key == "left":
-        step_turn = step_turn - 30
-    elif key == "right":
-        step_turn = step_turn + 30
+
 
 def release(key):
     if key == "a" or key == "d":
@@ -48,7 +63,6 @@ def release(key):
 listen_keyboard(
     on_press=press,
     on_release=release
-
     )
 
 
