@@ -26,7 +26,7 @@ def press(key):
             bw.forward()
             bw.speed = forward_speed
     elif key == "down":
-        if direction == 1 and direction == 0 and forward_speed <= 100:
+        if direction == 1 or direction == 0 and forward_speed <= 100:
             forward_speed -= 10
             bw.forward()
             bw.speed = forward_speed
