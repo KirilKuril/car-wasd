@@ -23,7 +23,7 @@ def press(key):
         forward_speed -= speed_step
     elif key == "left":
         step_turn = step_turn - 30
-    elif key == D"right":
+    elif key == "right":
         step_turn = step_turn + 30
     elif key == "w":
         if direction == 0:
